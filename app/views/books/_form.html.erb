@@ -11,37 +11,39 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :isbn %>
-    <%= form.text_field :isbn, id: :book_isbn %>
-  </div>
+  <%= form_for(book) do |f| %>
+    <div class="field">
+      <%= f.label :isbn, 'ISBNコード' %>
+      <%= f.text_field :isbn %>
+    </div>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :book_title %>
-  </div>
+    <div class="field">
+      <%= form.label :title %>
+      <%= form.text_field :title, id: :book_title %>
+    </div>
 
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.number_field :price, id: :book_price %>
-  </div>
+    <div class="field">
+      <%= form.label :price %>
+      <%= form.number_field :price, id: :book_price %>
+    </div>
 
-  <div class="field">
-    <%= form.label :publish %>
-    <%= form.text_field :publish, id: :book_publish %>
-  </div>
+    <div class="field">
+      <%= form.label :publish %>
+      <%= form.text_field :publish, id: :book_publish %>
+    </div>
 
-  <div class="field">
-    <%= form.label :published %>
-    <%= form.date_select :published, id: :book_published %>
-  </div>
+    <div class="field">
+      <%= form.label :published %>
+      <%= form.date_select :published, id: :book_published %>
+    </div>
 
-  <div class="field">
-    <%= form.label :dl %>
-    <%= form.check_box :dl, id: :book_dl %>
-  </div>
+    <div class="field">
+      <%= form.label :dl %>
+      <%= form.check_box :dl, id: :book_dl %>
+    </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+    <div class="actions">
+      <%= f.submit '保存', data: { confirm: '保存しても良いですか？', disable_with: '処理中' } %>
+    </div>
+  <% end %>
 <% end %>
